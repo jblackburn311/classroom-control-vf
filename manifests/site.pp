@@ -39,12 +39,9 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node 'jblackburn311.puppetlabs.net' {
-  file { '/etc/motd'  :
-      ensure => file,
-      owner => 'root',
-      group => 'root',
-      mode => '0644',
-      content => "message of the day is :p\n",
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd" :
+      creates => '/etc/motd',
+      path    => '/usr/bin:/usr/local/bin',
     }
   }
   
