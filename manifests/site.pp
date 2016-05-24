@@ -42,6 +42,7 @@ node 'jblackburn311.puppetlabs.vm' {
   
   include users     #including users module
   include skeleton
+  include memcached
   
   exec { 'motd cowsay':
       path    => '/usr/local/bin',
