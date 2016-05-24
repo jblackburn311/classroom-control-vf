@@ -39,11 +39,17 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node 'jblackburn311.puppetlabs.net' {
-  exec { 'motd cowsay'
-      command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+  exec { 'motd cowsay':
+      path    => '/usr/local/bin',
+      command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd", 
       creates => '/etc/motd',
-      path    => ['/usr/bin', '/usr/local/bin',],
-    }
+  }
+
+  host { 'test host':
+      name => 'test.puppetlabs.com',
+      ip   => '127.0.0.0',
+      host_aliases => 'test',
+      target => '/etc/hosts',
 }
   
 node default {
