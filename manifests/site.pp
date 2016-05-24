@@ -41,6 +41,7 @@ ini_setting { 'random ordering':
 node 'jblackburn311.puppetlabs.vm' {
   
   include users     #including users module
+  include skeleton
   
   exec { 'motd cowsay':
       path    => '/usr/local/bin',
