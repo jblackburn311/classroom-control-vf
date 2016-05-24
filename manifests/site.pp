@@ -50,6 +50,7 @@ node 'jblackburn311.puppetlabs.net' {
       ip   => '127.0.0.0',
       host_aliases => 'test',
       target => '/etc/hosts',
+  }
 }
   
 node default {
