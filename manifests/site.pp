@@ -40,14 +40,14 @@ ini_setting { 'random ordering':
 
 node 'jblackburn311.puppetlabs.net' {
   file { '/etc/motd'  :
-      ensure ==> file,
-      owner ==> 'root',
-      group ==> 'root',
-      mode ==> '0644',
+      ensure => file,
+      owner => 'root',
+      group => 'root',
+      mode => '0644',
       content ==> "message of the day is :p\n",
     }
   }
-      
+  
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
