@@ -39,7 +39,8 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node 'jblackburn311.puppetlabs.net' {
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+  exec { 'motd cowsay'
+      command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
       creates => '/etc/motd',
       path    => ['/usr/bin', '/usr/local/bin',],
     }
