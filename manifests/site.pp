@@ -39,6 +39,9 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node 'jblackburn311.puppetlabs.vm' {
+  
+  include users     #including users module
+  
   exec { 'motd cowsay':
       path    => '/usr/local/bin',
       command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd", 
