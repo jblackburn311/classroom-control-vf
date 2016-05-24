@@ -17,7 +17,7 @@ class nginx {
     owner => 'root',
     group => 'root',
     mode => '0664',
-    source => 'puppet:///modules/nginx/index.html'
+    source => 'puppet:///modules/nginx/index.html',
   }
   
   file { 'nginx.conf' :
@@ -31,7 +31,7 @@ class nginx {
     notify => Service['nginx'],
   }
 
-  file { '/etc/nginx/conf.d' :
+  file { '/etc/nginx/default.d' :
     ensure => directory,
     owner => 'root',
     group => 'root',
