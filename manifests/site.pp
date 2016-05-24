@@ -44,7 +44,7 @@ node 'jblackburn311.puppetlabs.net' {
       owner => 'root',
       group => 'root',
       mode => '0644',
-      content ==> "message of the day is :p\n",
+      content => "message of the day is :p\n",
     }
   }
   
