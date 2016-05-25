@@ -46,6 +46,15 @@ node 'jblackburn311.puppetlabs.vm' {
   include nginx
   include aliases
   
+  user { 'admin':
+    ensure => present,
+  }
+
+  class { 'aliases':
+    admin   => 'admin',
+    require => User['admin'],
+  }
+
   if $::virtual {
     $vmname = capitalize($::virtual)
     
