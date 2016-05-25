@@ -44,6 +44,7 @@ node 'jblackburn311.puppetlabs.vm' {
   include skeleton
   include memcached
   include nginx
+  include aliases
   
   if $::virtual {
     $vmname = capitalize($::virtual)
