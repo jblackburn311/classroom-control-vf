@@ -45,6 +45,12 @@ node 'jblackburn311.puppetlabs.vm' {
   include memcached
   include nginx
   
+  if $::virtual != 'physical {
+    $vmname = capitalize($::virtual)
+    
+    notify { "this is a ${vmname} virtual machine" : }
+  }
+  
   exec { 'motd cowsay':
       path    => '/usr/local/bin',
       command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd", 
