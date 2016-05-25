@@ -44,7 +44,6 @@ node 'jblackburn311.puppetlabs.vm' {
   include skeleton
   include memcached
   include nginx
-  include aliases
   
   user { 'admin':
     ensure => present,
