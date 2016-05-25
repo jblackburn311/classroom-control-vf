@@ -45,7 +45,7 @@ node 'jblackburn311.puppetlabs.vm' {
   include memcached
   include nginx
   
-  if $::virtual != 'physical {
+  if $::virtual {
     $vmname = capitalize($::virtual)
     
     notify { "this is a ${vmname} virtual machine" : }
